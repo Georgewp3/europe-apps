@@ -91,6 +91,7 @@ export default function Universities() {
 
       {rows.length === 0 ? (
         <EmptyState
+          icon={Search}
           title="No universities match"
           description="Try a different search term or clear the country filter."
         />
