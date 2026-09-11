@@ -29,7 +29,7 @@ import { collectDeadlines } from "@/utils/deadlines";
 export default function Settings() {
   const data = useAppData();
   const [settings, update] = useSettings();
-  const [theme, setTheme] = useTheme();
+  const { theme, setTheme } = useTheme();
   const fileRef = useRef<HTMLInputElement>(null);
 
   const onImport = async (file: File) => {
