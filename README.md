@@ -27,12 +27,22 @@ npm run preview
 The app uses relative asset paths (`base: "./"`) and hash-based routing, so it works from any
 repository sub-path.
 
+### Automatic (recommended): GitHub Actions
+
+`.github/workflows/deploy.yml` builds `dist/` and publishes it to GitHub Pages every time you push
+to `main`. Enable it once in GitHub → Settings → Pages by setting **Source** to **GitHub Actions**.
+Your app is then served at `https://<user>.github.io/<repo>/`.
+
+### Manual: publish from your computer
+
 ```bash
 npm run deploy   # builds and publishes dist/ to the gh-pages branch
 ```
 
-Then in GitHub → Settings → Pages, set the source to the `gh-pages` branch. Your app will be served
-at `https://<user>.github.io/<repo>/`.
+Then in GitHub → Settings → Pages, set the source to the `gh-pages` branch.
+
+> Never publish the repository root as Pages: the source folder contains `index.html` that still
+> points at `src/main.tsx`, which a browser cannot run — only `dist/` is a working site.
 
 ## Data & privacy
 
